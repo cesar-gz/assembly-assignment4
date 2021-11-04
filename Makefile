@@ -47,7 +47,7 @@ build:	$(BIN)
 
 
 
-$(BIN): largest.o input_array.o manager.o find_largest.o output_array.o
+$(BIN): heron.o triangle.o get_sides.o compute_area.o show_results.o
 	@echo
 	@echo "Linking: $@"
 	$(LINKER) $(LINKER_FLAGS) *.o *.so -o $@
