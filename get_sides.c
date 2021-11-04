@@ -4,10 +4,12 @@
 
 #include <stdio.h>
 
-void get_sides(double* side1, double* side2, double* side3){
-    double d;
-    scanf("%lf", d);
-    printf("%d", d);
+extern "C" long triangle();
 
+double get_sides(double* side1, double* side2, double* side3){
+    double* d = 0;
+    scanf("%lf", d);
+    printf("%lf", *d);
+    return *d;
 }
 
