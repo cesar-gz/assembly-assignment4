@@ -23,6 +23,10 @@ section .data
 
 section .text
 
+extern get_sides
+extern compute_area
+extern show_results
+
 global triangle
 triangle:
 
@@ -32,6 +36,10 @@ triangle:
 	mov rdx, MSG_LEN
 	syscall
 	call crlf
+
+    ;load 3 float registers to pass by reference?
+    call get_sides
+    ;save the floats
 
     mov rax, 0
     ret 
