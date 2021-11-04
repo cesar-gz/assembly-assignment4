@@ -15,6 +15,6 @@ int main(){
 	cout << "Welcome to CPSC 240 Assignment 4 brought to you by Cesar Gutierrez." << endl;
     returnValue = triangle();
     cout << "Heron received this number: " << returnValue << "." << endl;
-    cout << "Have a nice day. The program will return control to the operating system.";
+    cout << "Have a nice day. The program will return control to the operating system." << endl;
 	return 0;
 }
