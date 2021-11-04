@@ -66,7 +66,7 @@ triangle.o: triangle.asm
 get_sides.o: get_sides.c
 	@echo
 	@echo "Building: $@"
-	$(CPP) $(CPP_FLAGS) get_sides.c -o $@
+	$(CC) $(CC_FLAGS) get_sides.c -o $@
 
 compute_area.o: compute_area.asm
 	@echo
