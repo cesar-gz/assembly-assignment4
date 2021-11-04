@@ -13,6 +13,11 @@ section .data
     MSG			db	"The manager is here to help you find the area of your triangle.", 13,10, "Input your 3 floating point numbers representing the sides of a triangle.", 13,10, "Press enter after each number."
 	MSG_LEN		equ	$-MSG
 
+    A           db  "Your triangle is nonsense!"
+    A_LEN       equ $-A
+
+    B           db  "The area will be returned to Heron."
+    B_LEN       equ $-B
 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
