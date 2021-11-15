@@ -4,13 +4,13 @@ ASM := yasm
 ASM_FLAGS := -gdwarf2 -f elf64
 
 CC := gcc
-CC_FLAGS:= -Wall -m64 -gdwarf-2 -c
+CC_FLAGS:= -Wall -pedantic -m64 -gdwarf-2 -c
 
 CPP := g++
 CPP_FLAGS := -Wall -std=c++17 -m64 -gdwarf-2 -c
 
 LINKER := g++
-LINKER_FLAGS := -m64 -gdwarf-2 -no-pie
+LINKER_FLAGS := -Wall -pedantic -m64 -gdwarf-2 -no-pie
 
 BIN_NAME := my-program
 BIN := ./$(BIN_NAME)
