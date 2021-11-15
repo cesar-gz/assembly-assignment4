@@ -10,6 +10,10 @@ section .data
     CRLF			db	13,10
 	CRLF_LEN		equ	$-CRLF
 
+	sideA 	dq	 1.00
+	sideB 	dq 	 2.00
+	sideC 	dq 	 3.00
+
     MSG			db	"The manager is here to help you find the area of your triangle.", 13,10, "Input your 3 floating point numbers representing the sides of a triangle.", 13,10, "Press enter after each number."
 	MSG_LEN		equ	$-MSG
 
@@ -26,9 +30,12 @@ section .text
 extern get_sides
 extern compute_area
 extern show_results
+extern libPuhfessorP_printFloat64
 
 global triangle
 triangle:
+	; Prologue
+	;push r12
 
     mov rax, SYS_WRITE
 	mov rdi, FD_STDOUT
@@ -37,9 +44,19 @@ triangle:
 	syscall
 	call crlf
 
-    ;load 3 float registers to pass by reference?
-    call get_sides
-    ;save the floats
+	mov rdi, sideA
+	mov rsi, sideB
+	mov rdx, sideC
+	call get_sides
+
+	push r12
+	movsd xmm0, [sideA]
+	call libPuhfessorP_printFloat64
+	call crlf
+	pop r12
+
+	; Epilogue
+	;pop r12
 
     mov rax, 0
     ret 
