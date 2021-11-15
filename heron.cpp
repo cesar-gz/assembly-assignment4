@@ -10,7 +10,7 @@ extern "C" long triangle();
 
 int main(){
 	
-    long returnValue;
+    double returnValue;
 	cout << endl;
 	cout << "Welcome to CPSC 240 Assignment 4 brought to you by Cesar Gutierrez." << endl;
     returnValue = triangle();
